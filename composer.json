@@ -1,0 +1,29 @@
+{
+    "name": "taavi/laravel-socialite-mediawiki",
+    "description": "A MediaWiki authentication provider for Laravel Socialite",
+    "version": "0.0.1",
+    "type": "library",
+    "require": {
+        "php": "^7.0",
+        "laravel/socialite": "^4.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Taavi Väänänen",
+            "email": "mailbox@taavi.wtf"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Taavi\\LaravelSocialiteMediawiki\\": "includes/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Taavi\\LaravelSocialiteMediawiki\\Providers\\MediawikiSocialiteServiceProvider"
+            ]
+        }
+    }
+}
