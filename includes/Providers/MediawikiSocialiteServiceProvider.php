@@ -31,7 +31,7 @@ use Laravel\Socialite\Contracts\Factory;
 use Taavi\LaravelSocialiteMediawiki\Socialite\One\WikiSocialiteServer;
 use Taavi\LaravelSocialiteMediawiki\Socialite\One\WikiSocialiteProvider;
 
-class MediawikiSocialiteServiceProviders extends ServiceProvider
+class MediawikiSocialiteServiceProvider extends ServiceProvider
 {
     public function boot()
     {
