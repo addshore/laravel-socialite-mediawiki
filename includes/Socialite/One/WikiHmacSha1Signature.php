@@ -27,6 +27,7 @@
 namespace Taavi\LaravelSocialiteMediawiki\Socialite\One;
 
 use GuzzleHttp\Psr7\Uri;
+use Psr\Http\Message\UriInterface;
 use League\OAuth1\Client\Signature\HmacSha1Signature;
 
 class WikiHmacSha1Signature extends HmacSha1Signature
@@ -35,7 +36,7 @@ class WikiHmacSha1Signature extends HmacSha1Signature
      * {@inheritDoc}
      */
     // Overriding this is a hack, and I don't like it. It's needed to include port in OAuth signature uri :/
-    protected function baseString(Uri $url, $method = 'POST', array $parameters = array())
+    protected function baseString(UriInterface $url, $method = 'POST', array $parameters = array())
     {
         $baseString = rawurlencode($method).'&';
 
