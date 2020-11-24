@@ -69,7 +69,7 @@ class WikiSocialiteServer extends Server
     public function userDetails($data, TokenCredentials $tokenCredentials)
     {
         $user = new User;
-        $user->uid = $data->username;
+        $user->uid = $data->sub;
         $user->name = $data->username;
         $user->email = $data->email;
         $user->groups = $data->groups;
@@ -78,7 +78,7 @@ class WikiSocialiteServer extends Server
 
     public function userUid($data, TokenCredentials $tokenCredentials)
     {
-        return $data->username;
+        return $data->sub;
     }
 
     public function userEmail($data, TokenCredentials $tokenCredentials)
