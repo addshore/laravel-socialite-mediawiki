@@ -1,4 +1,8 @@
 # laravel-socialite-mediawiki
+[![Latest Stable Version](https://poser.pugx.org/taavi/laravel-socialite-mediawiki/v)](//packagist.org/packages/taavi/laravel-socialite-mediawiki)
+[![Total Downloads](https://poser.pugx.org/taavi/laravel-socialite-mediawiki/downloads)](//packagist.org/packages/taavi/laravel-socialite-mediawiki)
+[![License](https://poser.pugx.org/taavi/laravel-socialite-mediawiki/license)](//packagist.org/packages/taavi/laravel-socialite-mediawiki)
+
 
 This package provides a Socialite service that can be used to log in using MediaWiki's OAuth extension.
 
