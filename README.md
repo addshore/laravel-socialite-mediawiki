@@ -1,10 +1,7 @@
 # laravel-socialite-mediawiki
-[![Latest Stable Version](https://poser.pugx.org/taavi/laravel-socialite-mediawiki/v)](//packagist.org/packages/taavi/laravel-socialite-mediawiki)
-[![Total Downloads](https://poser.pugx.org/taavi/laravel-socialite-mediawiki/downloads)](//packagist.org/packages/taavi/laravel-socialite-mediawiki)
-[![License](https://poser.pugx.org/taavi/laravel-socialite-mediawiki/license)](//packagist.org/packages/taavi/laravel-socialite-mediawiki)
 
-
-This package provides a Socialite service that can be used to log in using MediaWiki's OAuth extension.
+This package provides a Socialite service that can be used to log in
+using MediaWiki's OAuth extension.
 
 ## Installing
 
@@ -80,3 +77,12 @@ class OauthLoginController extends Controller
     }
 }
 ```
+
+## Contributing and license
+
+Please use [git-send-email](https://git-send-email.io) to send patches to
+[~taavi/inbox@lists.sr.ht](mailto:~taavi/inbox@lists.sr.ht).
+
+This package is licensed under the MIT license. See the LICENSE file
+for specifics.
+
