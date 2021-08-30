@@ -26,20 +26,23 @@
 
 namespace Taavi\LaravelSocialiteMediawiki\Socialite\One;
 
-use Laravel\Socialite\One\User;
 use Laravel\Socialite\One\AbstractProvider;
+use Laravel\Socialite\One\User;
 
-class WikiSocialiteProvider extends AbstractProvider
-{
-    public function user()
-    {
-        $user = $this->server->getUserDetails($token = $this->getToken(), $this->shouldBypassCache($token->getIdentifier(), $token->getSecret()));
-        $data = [
-            'id' => $user->sub,
-            'name' => $user->username,
-            'groups' => $user->groups,
-        ];
+class WikiSocialiteProvider extends AbstractProvider {
+	public function user() {
+		$token = $this->getToken();
+		$user = $this->server->getUserDetails(
+			$token,
+			$this->shouldBypassCache( $token->getIdentifier(), $token->getSecret() )
+		);
 
-        return (new User())->setRaw($data)->map($data);
-    }
+		$data = [
+			'id' => $user->sub,
+			'name' => $user->username,
+			'groups' => $user->groups,
+		];
+
+		return ( new User() )->setRaw( $data )->map( $data );
+	}
 }

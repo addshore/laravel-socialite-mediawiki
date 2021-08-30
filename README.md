@@ -38,43 +38,37 @@ MEDIAWIKI_OAUTH_BASE_URL=
 ### Use
 
 ```php
-class OauthLoginController extends Controller
-{
-    public function __construct()
-    {
-        $this->middleware('guest')->only(['login', 'callback']);
-        $this->middleware('auth')->only('logout');
-    }
+class OauthLoginController extends Controller {
+	public function __construct() {
+		$this->middleware( 'guest' )->only( [ 'login', 'callback' ] );
+		$this->middleware( 'auth' )->only( 'logout' );
+	}
 
-    public function login()
-    {
-        return Socialite::driver('wiki')
-            ->redirect();
-    }
+	public function login() {
+		return Socialite::driver( 'wiki' )
+			->redirect();
+	}
 
-    public function callback()
-    {
-        $socialiteUser = Socialite::driver('wiki')->user();
+	public function callback() {
+		$socialiteUser = Socialite::driver( 'wiki' )->user();
 
-        $user = User::firstOrCreate([
-            'username' => $socialiteUser->name,
-        ]);
+		$user = User::firstOrCreate( [
+			'username' => $socialiteUser->name,
+		] );
 
-        Auth::login($user, false);
-        return redirect()->intended('/');
-    }
+		Auth::login( $user, false );
+		return redirect()->intended( '/' );
+	}
 
-    public function logout(Request $request)
-    {
-        $this->guard()->logout();
-        $request->session()->invalidate();
-        return redirect('/');
-    }
+	public function logout( Request $request ) {
+		$this->guard()->logout();
+		$request->session()->invalidate();
+		return redirect( '/' );
+	}
 
-    private function guard()
-    {
-        return Auth::guard();
-    }
+	private function guard() {
+		return Auth::guard();
+	}
 }
 ```
 

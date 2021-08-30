@@ -28,22 +28,20 @@ namespace Taavi\LaravelSocialiteMediawiki\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Socialite\Contracts\Factory;
-use Taavi\LaravelSocialiteMediawiki\Socialite\One\WikiSocialiteServer;
 use Taavi\LaravelSocialiteMediawiki\Socialite\One\WikiSocialiteProvider;
+use Taavi\LaravelSocialiteMediawiki\Socialite\One\WikiSocialiteServer;
 
-class MediawikiSocialiteServiceProvider extends ServiceProvider
-{
-    public function boot()
-    {
-        $socialite = $this->app->make(Factory::class);
-        $socialite->extend(
-            'mediawiki',
-            function ($app) use ($socialite) {
-                $config = $app['config']['services.mediawiki'];
-                return new WikiSocialiteProvider(
-                    $this->app['request'], new WikiSocialiteServer($config)
-                );
-            }
-        );
-    }
+class MediawikiSocialiteServiceProvider extends ServiceProvider {
+	public function boot() {
+		$socialite = $this->app->make( Factory::class );
+		$socialite->extend(
+			'mediawiki',
+			function ( $app ) use ( $socialite ) {
+				$config = $app['config']['services.mediawiki'];
+				return new WikiSocialiteProvider(
+					$this->app['request'], new WikiSocialiteServer( $config )
+				);
+			}
+		);
+	}
 }
