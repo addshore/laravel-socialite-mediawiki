@@ -43,6 +43,6 @@ class WikiSocialiteProvider extends AbstractProvider {
 			'groups' => $user->groups,
 		];
 
-		return ( new User() )->setRaw( $data )->map( $data );
+		return ( new User() )->setToken( $token->getIdentifier(), $token->getSecret() )->setRaw( $data )->map( $data );
 	}
 }
