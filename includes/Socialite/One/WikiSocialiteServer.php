@@ -45,7 +45,6 @@ class WikiSocialiteServer extends Server {
 	 */
 	public function __construct( $clientCredentials ) {
 		parent::__construct( $clientCredentials );
-		$this->signature = new WikiHmacSha1Signature( $this->clientCredentials );
 		$this->baseUrl = $clientCredentials['base_url'] ?? 'https://meta.wikimedia.org';
 	}
 
