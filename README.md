@@ -45,12 +45,12 @@ class OauthLoginController extends Controller {
 	}
 
 	public function login() {
-		return Socialite::driver( 'wiki' )
+		return Socialite::driver( 'mediawiki' )
 			->redirect();
 	}
 
 	public function callback() {
-		$socialiteUser = Socialite::driver( 'wiki' )->user();
+		$socialiteUser = Socialite::driver( 'mediawiki' )->user();
 
 		$user = User::firstOrCreate( [
 			'username' => $socialiteUser->name,
