@@ -8,7 +8,7 @@
 		"laravel/socialite": "^5.0"
 	},
 	"require-dev": {
-		"mediawiki/mediawiki-codesniffer": "38.0.0"
+		"mediawiki/mediawiki-codesniffer": "41.0.0"
 	},
 	"license": "MIT",
 	"authors": [
