@@ -3,9 +3,9 @@
 	"description": "A MediaWiki authentication provider for Laravel Socialite",
 	"type": "library",
 	"require": {
-		"php": "^7.0|^8.0",
+		"php": "^8.2",
 		"ext-json": "*",
-		"laravel/socialite": "^5.0"
+		"laravel/socialite": "^6.0"
 	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "41.0.0"
