@@ -5,7 +5,7 @@
 	"require": {
 		"php": "^8.2",
 		"ext-json": "*",
-		"laravel/socialite": "^6.0"
+		"laravel/socialite": "^5.20"
 	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "41.0.0"
