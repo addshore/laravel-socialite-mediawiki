@@ -28,6 +28,7 @@ namespace Taavi\LaravelSocialiteMediawiki\Socialite\One;
 
 use Carbon\Carbon;
 use Exception;
+use GuzzleHttp\Client;
 use GuzzleHttp\Exception\BadResponseException;
 use League\OAuth1\Client\Credentials\TokenCredentials;
 use League\OAuth1\Client\Server\Server;
@@ -74,6 +75,17 @@ class WikiSocialiteServer extends Server {
 	 */
 	public function urlUserDetails() {
 		return $this->baseUrl . '/w/index.php?title=Special:OAuth/identify';
+	}
+
+	/**
+	 * Create a Guzzle client with proper user-agent for MediaWiki requests
+	 */
+	public function createHttpClient() {
+		return new Client([
+			'headers' => [
+				'User-Agent' => 'https://github.com/addshore/laravel-socialite-mediawiki)',
+			],
+		]);
 	}
 
 	/**
